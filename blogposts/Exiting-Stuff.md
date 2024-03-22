@@ -7,7 +7,7 @@ date: '2024-03-20'
 
 You can use Static Generation for many types of pages, including:
 
-Marketing pages
-Blog posts
-E-commerce product listings
-Help and documentation
+- Marketing pages
+- Blog posts
+- E-commerce product listings
+- Help and documentation
