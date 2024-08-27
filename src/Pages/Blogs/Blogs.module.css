@@ -1,0 +1,51 @@
+@font-face {
+    font-family: pop-reg;
+    src: url('../../assets/Fonts/Poppins-Regular.ttf') ;
+  }
+  
+  @font-face {
+    font-family: pop-bold;
+    src: url('../../assets/Fonts/Poppins-Bold.ttf');
+  }
+  
+  
+  .blogContainer {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'pop-reg', Arial, sans-serif; /* Apply custom font */
+  }
+  /* Blogs.module.css */
+  .blogContainer .card {
+    transition: all 0.3s ease;
+  }
+  
+  .blogContainer .card.expanded {
+    border: 2px solid #007bff;
+    /* Add any additional styling you want for the expanded state */
+  }
+  
+  
+  .blogContainer h2 {
+    font-family: 'pop-bold', Arial, sans-serif; /* Apply bold font to titles */
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .blogContainer p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .blogContainer a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: pop-reg;
+  }
+  .btn {
+    padding: 5px 10px;
+    background-color:#67BDC3;
+    color: #333;
+    border-radius: 5px;
+  }

@@ -1,0 +1,125 @@
+@font-face {
+    font-family: pop-reg;
+    src: url('../../assets/Fonts/Poppins-Regular.ttf') ;
+  }
+  
+  @font-face {
+    font-family: pop-bold;
+    src: url('../../assets/Fonts/Poppins-Bold.ttf');
+  }
+  
+  
+  
+  .social h3 {
+    text-align: center;
+  }
+  
+  .about {
+    padding-top: 50px;
+  }
+  
+  .founder1 img {
+    border-radius: 15px;
+  }
+  
+  .type h2 {
+    font-family: 'pop-bold';
+    line-height: revert;
+    font-size: 24px;
+  }
+  
+  .type p {
+    font-family: 'pop-reg';
+    line-height: revert;
+    font-size: 16px;
+  }
+  
+  .gridd h1 {
+    font-family: 'pop-bold';
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
+  }
+  
+  .youtube {
+    border: 1px solid #EEEEEE;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    width: 111px;
+    height: 40px;
+  }
+  
+  .youtubeLink {
+    display: flex;
+    align-items: center;
+  }
+  
+  .youtubeLink p {
+    margin-right: 10px; 
+    color: red;
+  }
+  
+  .youtubeLink h3 {
+    font-size: 13px; 
+    color: #000;
+  }
+  
+  .youtube a {
+    text-decoration: none;
+  }
+  
+  .github {
+    display: flex;
+    align-items: center;
+    border: 1px solid #EEEEEE;
+    border-radius: 10px;
+    width: 70%;
+    background-color: #EEEEEE;
+    height: 38px;
+  }
+  
+  .github p {
+    margin-right: 10px; 
+    color: #333 !important;
+  }
+  
+  .github h3 {
+    /* margin: 0; */
+    font-size: 13px; 
+    color: #000;
+  }
+  
+  .github a {
+    text-decoration: none;
+  }
+  
+  .photoGallery img {
+    border-radius: 8px;
+  }
+  .imageGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two images per row */
+    gap: 10px; /* Space between images */
+  }
+  
+  .galleryImage {
+    width: 100%; /* Ensure images fill their grid cell */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: add border radius if needed */
+  }
+  @media (max-width: 768px) {
+    .github {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .type h2 {
+      font-size: 20px;
+    }
+    .type p {
+      font-size: 14px;
+    }
+  }
+  
