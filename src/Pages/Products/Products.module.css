@@ -1,63 +1,70 @@
 @font-face {
-    font-family: pop-reg;
-    src: url('../../assets/Fonts/Poppins-Regular.ttf') ;
-  }
-  
-  @font-face {
-    font-family: pop-bold;
-    src: url('../../assets/Fonts/Poppins-Bold.ttf');
-  }
-  
-  .pro {
-    padding: 20px 0;
-    background-color: #f9f9f9;
-  }
-  
-  .card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
-  
-  .cardImage {
-    width: 100%;
-    height: auto;
-  }
-  
-  .cardBody {
-    padding: 20px;
-  }
-  
-  .cardHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .cardTitle {
-    font-family: pop-bold;
-    font-size: 21px;
-    margin: 0;
-    color: #333;
-  }
-  
-  .viewMore {
-    font-family: pop-reg;
-    font-size: 16px;
-    color: #007acc;
-    text-decoration: none;
-  }
-  
-  .viewMore:hover {
-    text-decoration: underline;
-  }
-  
-  .cardDescription {
-    font-family: pop-reg;
-    font-size: 16px;
-    color: #555;
-  }
-  
+  font-family: pop-reg;
+  src: url('../../assets/Fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: pop-bold;
+  src: url('../../assets/Fonts/Poppins-Bold.ttf');
+}
+
+.pro {
+  padding: 20px 0;
+  background-color: #f9f9f9;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px; /* Fixed height to maintain aspect ratio */
+  object-fit: cover; /* Ensures image covers the container */
+  border-bottom: 2px solid #eee; /* Adds a border between the image and content */
+}
+
+.cardBody {
+  padding: 20px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cardTitle {
+  font-family: pop-bold;
+  font-size: 21px;
+  margin: 0;
+  color: #333;
+}
+
+.viewMore {
+  font-family: pop-reg;
+  font-size: 16px;
+  color: #007acc;
+  text-decoration: none;
+}
+
+.viewMore:hover {
+  text-decoration: underline;
+}
+
+.cardDescription {
+  font-family: pop-reg;
+  font-size: 16px;
+  color: #555;
+}

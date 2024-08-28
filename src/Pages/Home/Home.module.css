@@ -70,13 +70,11 @@
   }
   
   .github {
-    display: flex;
-    align-items: center;
     border: 1px solid #EEEEEE;
-    border-radius: 10px;
-    width: 70%;
     background-color: #EEEEEE;
-    height: 38px;
+    border-radius: 10px;
+    width: 111px;
+    height: 40px;
   }
   
   .github p {
@@ -122,4 +120,26 @@
       font-size: 14px;
     }
   }
+  .hireButton {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    background-color: #55AEB3;;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
   
+  .hireButton:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .hireButton:focus {
+    outline: none;
+    box-shadow: 0 0 5px #0056b3;
+  }
