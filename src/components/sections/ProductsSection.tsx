@@ -28,7 +28,7 @@ export default function ProductsSection({
                     {/* Left side - Product info */}
                     <div className="w-1/2 p-8 lg:p-16 flex flex-col">
                         <motion.h2
-                            className="text-3xl lg:text-4xl font-domine font-bold text-sexyblue/60 mb-8"
+                            className="text-4xl lg:text-6xl font-helvetica font-bold text-sexyblue mb-8"
                             initial={{ opacity: 0, y: -50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
@@ -36,33 +36,27 @@ export default function ProductsSection({
                             Products
                         </motion.h2>
                         <div className="flex-1">
-                            <motion.h3
-                                className="text-2xl lg:text-3xl font-domine font-black text-sexyblue mb-4"
-                                key={currentProduct}
-                                initial={{ opacity: 0, x: -50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.6 }}
-                            >
-                                {product.category}
-                            </motion.h3>
-                            <motion.h4
-                                className="text-xl lg:text-2xl font-domine font-bold text-sexyblue mb-4"
-                                key={`${currentProduct}-name`}
-                                initial={{ opacity: 0, x: -30 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
-                            >
-                                {product.name}
-                            </motion.h4>
-                            <motion.p
-                                className="text-lg text-sexyblue/80 font-domine"
-                                key={`${currentProduct}-${currentImageIndex}-detail`}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: 0.3 }}
-                            >
-                                {product.images[currentImageIndex]?.detail}
-                            </motion.p>
+                            <div className="bg-sexyblue/5 p-2 rounded-2xl border-2 border-indigo-80 ">
+                                <motion.h4
+                                    className="text-xl lg:text-3xl font-domine font- font-bold text-sexyblue mb-4"
+                                    key={`${currentProduct}-name`}
+                                    initial={{ opacity: 0, x: -30 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.6, delay: 0.2 }}
+                                >
+                                    {product.name}
+                                </motion.h4>
+
+                                <motion.p
+                                    className="text-lg text-sexyblue/80 font-domine"
+                                    key={`${currentProduct}-${currentImageIndex}-detail`}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.3 }}
+                                >
+                                    {product.images[currentImageIndex]?.detail}
+                                </motion.p>
+                            </div>
                         </div>
                     </div>
 
@@ -84,8 +78,8 @@ export default function ProductsSection({
                                     key={index}
                                     onClick={() => onImageIndexChange(index)}
                                     className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentImageIndex
-                                            ? 'bg-sexyblue scale-125 shadow-lg shadow-sexyblue/50'
-                                            : 'bg-sexyblue/30 hover:bg-sexyblue/60'
+                                        ? 'bg-sexyblue scale-125 shadow-lg shadow-sexyblue/50'
+                                        : 'bg-sexyblue/30 hover:bg-sexyblue/60'
                                         }`}
                                 />
                             ))}
