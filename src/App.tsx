@@ -1,12 +1,17 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './components/home'
-import Mheader from './components/Mheader'
+import CalculatorPage from './pages/calculator/page'
+import CVPage from './pages/cv/page'
 
 function App() {
-
     return (
-        <>
-            <Home />
-        </>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/calculator" element={<CalculatorPage />} />
+                <Route path="/cv" element={<CVPage />} />
+            </Routes>
+        </Router>
     )
 }
 

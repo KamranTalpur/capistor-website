@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { getFallbackProducts, loadProducts, Product } from "../utils/productLoader";
 import { useScrollLogic } from "../utils/useScrollLogic";
 import { useProductNavigation } from "../utils/useProductNavigation";
@@ -14,6 +15,8 @@ export default function Home() {
     const [showBackToTop, setShowBackToTop] = useState(false);
     const [displayText, setDisplayText] = useState("We Build Products");
     const [logoScale, setLogoScale] = useState(1);
+
+
 
     // Load products on mount
     useEffect(() => {
@@ -63,7 +66,43 @@ export default function Home() {
         <div ref={containerRef} className="bg-kindofwhite relative">
             <CircuitBackground />
 
-            <HeroSection
+            {/* Navigation Header */}
+            <nav className="fixed top-4 right-4 z-50 flex gap-3">
+                <Link
+                    to="/cv"
+                    className="
+                    bg-sexyblue/10 
+                    backdrop-blur-sm 
+                    text-sexyblue px-4 py-2 
+                    rounded-full 
+                    hover:bg-sexyblue/20 t
+                    ransition-all 
+                    duration-300 font-domine"
+                >
+                    CV
+                </Link>
+                <Link
+                    to="/calculator"
+                    className="
+                    bg-sexyblue/10 
+                    backdrop-blur-sm 
+                    text-sexyblue 
+                    px-4 py-2 
+                    rounded-full 
+                    hover:bg-sexyblue/20 
+                    transition-all 
+                    duration-300 
+                    font-domine"
+                >
+                    Calculator
+                </Link>
+                <Link
+                    to="/blog"
+                    className="bg-sexyblue/10 backdrop-blur-sm text-sexyblue px-4 py-2 rounded-full hover:bg-sexyblue/20 transition-all duration-300 font-domin"
+                >
+                    Blog
+                </Link>
+            </nav>            <HeroSection
                 displayText={displayText}
                 logoScale={logoScale}
                 showDownArrow={showDownArrow}
@@ -85,6 +124,7 @@ export default function Home() {
                 onClick={scrollToTop}
                 className="fixed bottom-8 right-8 z-30"
             />
+
         </div>
     );
 }
