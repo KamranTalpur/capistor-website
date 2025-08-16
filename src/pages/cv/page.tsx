@@ -60,7 +60,7 @@ export default function CVPage() {
                             <img
                                 src="/cv_assets/my_picture.png"
                                 alt="Shoaib Mustafa"
-                                className="w-32 h-32 rounded-full mx-auto mb-6 shadow-2xl border-4 border-sexyblue/20"
+                                className="w-62 h-62 rounded-full mx-auto mb-6 shadow-2xl border-4 border-sexyblue/20"
                             />
                         </div>
                         <h1 className="text-5xl lg:text-6xl font-domine font-black text-sexyblue mb-4">

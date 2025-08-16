@@ -86,7 +86,7 @@ export const cvData: CVData = {
         email: "shoaib.mustafa7@hotmail.com",
         phone: "+92 333 130 4910",
         phoneSecondary: "+971 503 194 719",
-        location: "Islamabad, Pakistan",
+        location: "Ajman, UAE",
         website: "www.capistor.com",
         linkedin: "https://linkedin.com/in/shoaib-mustafa-794a0215a",
         github: "https://github.com/manhoosbilli1",
