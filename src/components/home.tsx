@@ -13,7 +13,7 @@ export default function Home() {
     const [products, setProducts] = useState<Product[]>([]);
     const [showDownArrow, setShowDownArrow] = useState(true);
     const [showBackToTop, setShowBackToTop] = useState(false);
-    const [displayText, setDisplayText] = useState("We Build Products");
+    const [displayText, setDisplayText] = useState("Capistor");
     const [logoScale, setLogoScale] = useState(1);
 
 
@@ -81,28 +81,8 @@ export default function Home() {
                 >
                     CV
                 </Link>
-                <Link
-                    to="/calculator"
-                    className="
-                    bg-sexyblue/10 
-                    backdrop-blur-sm 
-                    text-sexyblue 
-                    px-4 py-2 
-                    rounded-full 
-                    hover:bg-sexyblue/20 
-                    transition-all 
-                    duration-300 
-                    font-domine"
-                >
-                    Calculator
-                </Link>
-                <Link
-                    to="/blog"
-                    className="bg-sexyblue/10 backdrop-blur-sm text-sexyblue px-4 py-2 rounded-full hover:bg-sexyblue/20 transition-all duration-300 font-domin"
-                >
-                    Blog
-                </Link>
-            </nav>            <HeroSection
+            </nav>
+            <HeroSection
                 displayText={displayText}
                 logoScale={logoScale}
                 showDownArrow={showDownArrow}

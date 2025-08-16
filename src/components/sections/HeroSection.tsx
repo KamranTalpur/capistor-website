@@ -25,7 +25,7 @@ export default function HeroSection({
                         transition={{ duration: 1 }}
                         className="text-4xl lg:text-6xl font-domine font-black text-sexyblue leading-tight"
                     >
-                        {displayText}
+                        Capistor
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
@@ -33,7 +33,7 @@ export default function HeroSection({
                         transition={{ duration: 1, delay: 0.3 }}
                         className="text-lg md:text-xl text-sexyblue mt-6 font-domine font-bold"
                     >
-                        Embedded Systems, UI/UX Design, Automation, and Beyond.
+                        This site is currently under development
                     </motion.p>
                 </div>
             </div>
