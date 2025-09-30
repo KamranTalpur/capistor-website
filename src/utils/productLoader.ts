@@ -6,6 +6,7 @@ export interface ProductImage {
 }
 
 export interface Product {
+  [x: string]: any;
   id: number;
   name: string;
   category: string;

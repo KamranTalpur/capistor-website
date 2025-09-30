@@ -18,7 +18,6 @@ export const useScrollLogic = ({
   setDisplayText,
   setShowDownArrow,
   setShowBackToTop,
-  setCurrentProduct,
 }: UseScrollLogicProps) => {
   const lenisRef = useRef<Lenis | null>(null);
   const heroRef = useRef<HTMLElement | null>(null);
@@ -26,7 +25,7 @@ export const useScrollLogic = ({
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2, // Reduced for faster scrolling
+      duration: 1, // Reduced for faster scrolling
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       touchMultiplier: 0.5,
@@ -40,8 +39,12 @@ export const useScrollLogic = ({
     requestAnimationFrame(raf);
 
     const checkElements = setInterval(() => {
-      heroRef.current = document.querySelector(".hero-section") as HTMLElement | null;
-      productsRef.current = document.querySelector(".products-section") as HTMLElement | null;
+      heroRef.current = document.querySelector(
+        ".hero-section"
+      ) as HTMLElement | null;
+      productsRef.current = document.querySelector(
+        ".products-section"
+      ) as HTMLElement | null;
 
       if (heroRef.current && productsRef.current) {
         clearInterval(checkElements);
@@ -78,7 +81,9 @@ export const useScrollLogic = ({
   }, [setLogoScale, setDisplayText, setShowDownArrow, setShowBackToTop]);
 
   const scrollToProducts = () => {
-    lenisRef.current?.scrollTo(productsRef.current || ".products-section", { duration: 1.2 });
+    lenisRef.current?.scrollTo(productsRef.current || ".products-section", {
+      duration: 1.2,
+    });
   };
 
   const scrollToTop = () => {
