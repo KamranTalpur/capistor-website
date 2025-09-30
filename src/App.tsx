@@ -1,18 +1,82 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './components/home'
-import CalculatorPage from './pages/calculator/page'
-import CVPage from './pages/cv/page'
+import { useRef, useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Home from "./components/home";
+import About from "./components/pages/About";
+import ProductsSection from "./components/sections/ProductsSection";
+import Services from "./components/pages/Services";
+import Blog from "./components/pages/Blog";
+import Contact from "./components/pages/Contact";
+import { useProductNavigation } from "./utils/useProductNavigation";
+import { Product, loadProducts, getFallbackProducts } from "./utils/productLoader";
 
-function App() {
-    return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/calculator" element={<CalculatorPage />} />
-                <Route path="/cv" element={<CVPage />} />
-            </Routes>
-        </Router>
-    )
+export default function App() {
+  const sections = {
+    home: useRef<HTMLElement>(null),
+    about: useRef<HTMLElement>(null),
+    products: useRef<HTMLElement>(null),
+    services: useRef<HTMLElement>(null),
+    blog: useRef<HTMLElement>(null),
+    contact: useRef<HTMLElement>(null),
+  };
+
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const initProducts = async () => {
+      try {
+        const loadedProducts = await loadProducts();
+        setProducts(loadedProducts);
+      } catch (error) {
+        console.warn("Failed to load products, using fallback:", error);
+        const fallbackProducts = getFallbackProducts();
+        setProducts(fallbackProducts);
+      }
+    };
+    initProducts();
+  }, []);
+
+  const {
+    currentProduct,
+    currentImageIndex,
+    setCurrentProduct,
+    setCurrentImageIndex,
+    nextProduct,
+  } = useProductNavigation(products);
+
+  const previousProduct = () => {
+    setCurrentProduct((prev) => (prev - 1 + products.length) % products.length);
+    setCurrentImageIndex(0);
+  };
+
+  return (
+    <div className="min-h-screen bg-kindofwhite">
+      <Navbar sections={sections} />
+      <section ref={sections.home}>
+        <Home />
+      </section>
+      <section ref={sections.about}>
+        <About />
+      </section>
+      <section ref={sections.products}>
+        <ProductsSection
+          products={products}
+          currentProduct={currentProduct}
+          currentImageIndex={currentImageIndex}
+          setCurrentProduct={setCurrentProduct}
+          setCurrentImageIndex={setCurrentImageIndex}
+          nextProduct={nextProduct}
+          previousProduct={previousProduct}
+        />
+      </section>
+      <section ref={sections.services}>
+        <Services />
+      </section>
+      <section ref={sections.blog}>
+        <Blog />
+      </section>
+      <section ref={sections.contact}>
+        <Contact />
+      </section>
+    </div>
+  );
 }
-
-export default App

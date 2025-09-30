@@ -4,13 +4,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        sexyblue: "#4daab3",
+        sexyblue: "#343A40",
         kindofwhite: "#eeeeee",
         darkgray: "#2a2a2a",
+        capistor: {
+          50: "#F8F9FA",
+          100: "#E9ECEF",
+          200: "#DEE2E6",
+          300: "#CED4DA",
+          400: "#ADB5BD",
+          500: "#6C757D",
+          600: "#495057",
+          700: "#343A40",
+          800: "#212529",
+        },
       },
+
       fontFamily: {
         domine: ["Domine", "serif"],
         helvetica: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+        fransisco: ["San Francisco"],
+        lora: ["Lora", "serif"], // Added for accent text
+      },
+
+      animation: {
+        bounce: "bounce 1s infinite",
+      },
+      keyframes: {
+        bounce: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
     },
   },

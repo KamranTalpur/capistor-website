@@ -82,4 +82,4 @@ Custom configurations can be added to `tailwind.config.js`.
 3. Make your changes
 4. Run linting: `npm run lint`
 5. Build the project: `npm run build`
-6. Submit a pull request
+6. Submit a pull request.
