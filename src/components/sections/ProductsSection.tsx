@@ -79,90 +79,118 @@ export default function ProductsSection({
             </motion.div>
           </div>
           <div className="w-5/12 relative overflow-visible flex flex-col items-center justify-center">
-            <motion.div
-              className="w-full flex-1 flex items-center justify-center pt-20 relative group"
-              key={`${currentProduct}-image`}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-            >
-              <ProductImage
-                image={product.images[currentImageIndex]}
-                productIndex={currentProduct}
-                imageIndex={currentImageIndex}
-              />
-              {product.images.length > 1 && (
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30">
+            <div className="flex h-full w-full">
+              <div className="w-4/5 flex flex-col items-center">
+                <motion.div
+                  className="w-full flex-1 flex items-center justify-center pt-20 relative group"
+                  key={`${currentProduct}-image`}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  <ProductImage
+                    image={product.images[currentImageIndex]}
+                    productIndex={currentProduct}
+                    imageIndex={currentImageIndex}
+                  />
+                  {product.images.length > 1 && (
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-30">
+                      <button
+                        onClick={() =>
+                          setCurrentImageIndex(
+                            (currentImageIndex - 1 + product.images.length) % product.images.length
+                          )
+                        }
+                        aria-label="Previous image"
+                        className="absolute left-8 top-1/2 -translate-y-1/2 p-2 rounded-full bg-sexyblue/75 text-kindofwhite shadow hover:bg-sexyblue transition-colors"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={() =>
+                          setCurrentImageIndex((currentImageIndex + 1) % product.images.length)
+                        }
+                        aria-label="Next image"
+                        className="absolute right-8 top-1/2 -translate-y-1/2 p-2 rounded-full bg-sexyblue/75 text-kindofwhite shadow hover:bg-sexyblue transition-colors"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                  )}
+                </motion.div>
+                <div className="w-full flex justify-center py-8 gap-2">
+                  {product.images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                        index === currentImageIndex
+                          ? "bg-sexyblue scale-125 shadow-lg shadow-sexyblue/50"
+                          : "bg-sexyblue/30 hover:bg-sexyblue/60"
+                      }`}
+                      aria-label={`Select image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+                <div className="flex gap-4 mb-8">
                   <button
-                    onClick={() =>
-                      setCurrentImageIndex(
-                        (currentImageIndex - 1 + product.images.length) % product.images.length
-                      )
-                    }
-                    aria-label="Previous image"
-                    className="absolute left-8 top-1/2 -translate-y-1/2 p-2 rounded-full bg-sexyblue/75 text-kindofwhite shadow hover:bg-sexyblue transition-colors"
+                    onClick={previousProduct}
+                    className="w-48 py-2 bg-sexyblue text-kindofwhite rounded-lg font-domine text-lg hover:bg-capistor-600 transition-colors duration-200"
+                    aria-label="Go to previous product"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
+                    Previous
                   </button>
                   <button
-                    onClick={() =>
-                      setCurrentImageIndex((currentImageIndex + 1) % product.images.length)
-                    }
-                    aria-label="Next image"
-                    className="absolute right-8 top-1/2 -translate-y-1/2 p-2 rounded-full bg-sexyblue/75 text-kindofwhite shadow hover:bg-sexyblue transition-colors"
+                    onClick={nextProduct}
+                    className="w-48 py-2 bg-sexyblue text-kindofwhite rounded-lg font-domine text-lg hover:bg-capistor-600 transition-colors duration-200"
+                    aria-label="Go to next product"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
+                    Next
                   </button>
                 </div>
-              )}
-            </motion.div>
-            <div className="w-full flex justify-center py-8 gap-2">
-              {product.images.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentImageIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentImageIndex
-                      ? "bg-sexyblue scale-125 shadow-lg shadow-sexyblue/50"
-                      : "bg-sexyblue/30 hover:bg-sexyblue/60"
-                  }`}
-                  aria-label={`Select image ${index + 1}`}
-                />
-              ))}
-            </div>
-            <div className="flex gap-4 mb-8">
-              <button
-                onClick={previousProduct}
-                className="w-48 py-2 bg-sexyblue text-kindofwhite rounded-lg font-domine text-lg hover:bg-capistor-600 transition-colors duration-200"
-                aria-label="Go to previous product"
-              >
-                Previous
-              </button>
-              <button
-                onClick={nextProduct}
-                className="w-48 py-2 bg-sexyblue text-kindofwhite rounded-lg font-domine text-lg hover:bg-capistor-600 transition-colors duration-200"
-                aria-label="Go to next product"
-              >
-                Next
-              </button>
+              </div>
+              <nav className="w-1/2 pl-4 pt-36">
+                <motion.ul
+                  className="bg-kindofwhite/90 p-4 rounded-lg shadow-lg space-y-2 max-h-[calc(100vh-370px)] overflow-y-auto"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {products.map((prod, index) => (
+                    <motion.li
+                      key={index}
+                      className={`cursor-pointer p-2 rounded-md ${
+                        currentProduct === index ? "bg-sexyblue/20" : "hover:bg-sexyblue/10"
+                      }`}
+                      onClick={() => setCurrentProduct(index)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span className="text-sexyblue font-helvetica text-sm">
+                        {prod.name} {prod.isNew && <span className="text-capistor-600 text-xs">(NEW)</span>}
+                      </span>
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              </nav>
             </div>
           </div>
         </div>
