@@ -1,3 +1,8 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,7 +10,5 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
+
+/* Other custom styles can go here */

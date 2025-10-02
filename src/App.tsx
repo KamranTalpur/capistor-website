@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
+import MyNavbar from "./components/Navbar";
 import Home from "./components/home";
 import About from "./components/pages/About";
 import ProductsSection from "./components/sections/ProductsSection";
@@ -7,7 +7,11 @@ import Services from "./components/pages/Services";
 import Blog from "./components/pages/Blog";
 import Contact from "./components/pages/Contact";
 import { useProductNavigation } from "./utils/useProductNavigation";
-import { Product, loadProducts, getFallbackProducts } from "./utils/productLoader";
+import {
+  Product,
+  loadProducts,
+  getFallbackProducts,
+} from "./utils/productLoader";
 
 export default function App() {
   const sections = {
@@ -50,13 +54,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-kindofwhite">
-      <Navbar sections={sections} />
+      <MyNavbar sections={sections} />
       <section ref={sections.home}>
         <Home />
       </section>
-      <section ref={sections.about}>
-        <About />
-      </section>
+
       <section ref={sections.products}>
         <ProductsSection
           products={products}
@@ -73,6 +75,9 @@ export default function App() {
       </section>
       <section ref={sections.blog}>
         <Blog />
+      </section>
+      <section ref={sections.about}>
+        <About />
       </section>
       <section ref={sections.contact}>
         <Contact />

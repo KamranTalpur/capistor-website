@@ -8,7 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 interface UseScrollLogicProps {
   setLogoScale: (scale: number) => void;
   setDisplayText: (text: string) => void;
-  setShowDownArrow: (show: boolean) => void;
   setShowBackToTop: (show: boolean) => void;
   setCurrentProduct: (index: number) => void;
 }
@@ -16,7 +15,6 @@ interface UseScrollLogicProps {
 export const useScrollLogic = ({
   setLogoScale,
   setDisplayText,
-  setShowDownArrow,
   setShowBackToTop,
 }: UseScrollLogicProps) => {
   const lenisRef = useRef<Lenis | null>(null);
@@ -24,47 +22,50 @@ export const useScrollLogic = ({
   const productsRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    // Initialize Lenis with optimized settings for smoother scrolling
     const lenis = new Lenis({
-      duration: 1, // Reduced for faster scrolling
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1.2, // Slightly increased for smoother feel
+      easing: (t) => 1 - Math.pow(1 - t, 5), // Use a more natural easing curve (Quintic Out)
       smoothWheel: true,
-      touchMultiplier: 0.5,
+      touchMultiplier: 1, // Adjusted for better mobile responsiveness
+      infinite: false,
     });
     lenisRef.current = lenis;
 
+    // Sync Lenis with requestAnimationFrame for smoother updates
     function raf(time: number) {
       lenis.raf(time);
+      ScrollTrigger.update();
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
 
+    // Ensure DOM elements are available before setting up ScrollTrigger
     const checkElements = setInterval(() => {
-      heroRef.current = document.querySelector(
-        ".hero-section"
-      ) as HTMLElement | null;
-      productsRef.current = document.querySelector(
-        ".products-section"
-      ) as HTMLElement | null;
+      productsRef.current = document.querySelector(".products-section") as HTMLElement | null;
 
       if (heroRef.current && productsRef.current) {
         clearInterval(checkElements);
 
+        // Hero section animation with smoother progress handling
         ScrollTrigger.create({
           trigger: heroRef.current,
           start: "top top",
-          end: "bottom top",
+          end: "+=100%", // Extend end trigger for smoother transition
+          scrub: 0.5, // Add scrub for smoother animation tied to scroll
           onUpdate: (self) => {
             const progress = self.progress;
             setLogoScale(1 - progress * 0.3);
             setDisplayText(progress > 0.7 ? "Products" : "We Build Products");
-            setShowDownArrow(progress <= 0.1);
+            
           },
         });
 
+        // Products section visibility toggle with smoother thresholds
         ScrollTrigger.create({
           trigger: productsRef.current,
-          start: "top top", // Adjusted to trigger earlier
-          end: "bottom bottom",
+          start: "top 80%", // Trigger earlier for smoother entrance
+          end: "bottom 20%",
           onEnter: () => setShowBackToTop(true),
           onLeave: () => setShowBackToTop(false),
           onEnterBack: () => setShowBackToTop(true),
@@ -73,22 +74,23 @@ export const useScrollLogic = ({
       }
     }, 100);
 
+    // Cleanup
     return () => {
       clearInterval(checkElements);
       lenis.destroy();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-  }, [setLogoScale, setDisplayText, setShowDownArrow, setShowBackToTop]);
+  }, [setLogoScale, setDisplayText, setShowBackToTop]);
 
-  const scrollToProducts = () => {
-    lenisRef.current?.scrollTo(productsRef.current || ".products-section", {
-      duration: 1.2,
+  
+
+  const scrollToTop = () => {
+    lenisRef.current?.scrollTo(0, {
+      duration: 1,
+      offset: 0,
+      easing: (t) => 1 - Math.pow(1 - t, 5),
     });
   };
 
-  const scrollToTop = () => {
-    lenisRef.current?.scrollTo(0, { duration: 1.2 });
-  };
-
-  return { scrollToProducts, scrollToTop };
+  return { scrollToTop };
 };

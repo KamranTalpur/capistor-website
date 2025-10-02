@@ -9,116 +9,11 @@ export default function CircuitBackground() {
         preserveAspectRatio="xMidYMid slice">
         {/* Mask to restrict effects to right and left sides */}
         <defs>
-          <mask id="leftMask">
-            <rect x="0" y="0" width="600" height="800" fill="white" />
-            <rect x="600" y="0" width="600" height="800" fill="black" />
-          </mask>
           <mask id="rightMask">
             <rect x="0" y="0" width="600" height="800" fill="black" />
             <rect x="600" y="0" width="600" height="800" fill="white" />
           </mask>
         </defs>
-
-        {/* LEFT SIDE */}
-        <g mask="url(#leftMask)" opacity="0.5">
-          <motion.path
-            d="M50,50 Q0,0 100,50 Q150,0 200,50 Q250,0 300,50"
-            stroke="#343A40"
-            strokeWidth="1.5"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0.2 }}
-            animate={{ pathLength: 1, opacity: 0.4 }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-          />
-          <motion.path
-            d="M100,100 Q50,50 150,100 Q200,50 250,100 Q300,50 350,100"
-            stroke="#343A40"
-            strokeWidth="1.5"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0.2 }}
-            animate={{ pathLength: 1, opacity: 0.4 }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "linear",
-              delay: 0.8,
-            }}
-          />
-          <motion.path
-            d="M75,75 Q25,25 125,75 Q175,25 225,75 Q275,25 325,75"
-            stroke="#343A40"
-            strokeWidth="1.5"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0.2 }}
-            animate={{ pathLength: 1, opacity: 0.4 }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "linear",
-              delay: 1.6,
-            }}
-          />
-          <motion.path
-            d="M125,25 Q75,0 175,25 Q225,0 275,25 Q325,0 375,25"
-            stroke="#343A40"
-            strokeWidth="1.5"
-            fill="none"
-            initial={{ pathLength: 0, opacity: 0.2 }}
-            animate={{ pathLength: 1, opacity: 0.4 }}
-            transition={{
-              duration: 7,
-              repeat: Infinity,
-              ease: "linear",
-              delay: 2.4,
-            }}
-          />
-
-          {/* Circuit nodes - only in left area */}
-          {[
-            { x: 50, y: 50 },
-            { x: 0, y: 0 },
-            { x: 100, y: 50 },
-            { x: 150, y: 0 },
-            { x: 200, y: 50 },
-            { x: 250, y: 0 },
-            { x: 300, y: 50 },
-            { x: 100, y: 100 },
-            { x: 50, y: 50 },
-            { x: 150, y: 100 },
-            { x: 200, y: 50 },
-            { x: 250, y: 100 },
-            { x: 75, y: 75 },
-            { x: 25, y: 25 },
-            { x: 125, y: 75 },
-            { x: 175, y: 25 },
-            { x: 225, y: 75 },
-            { x: 275, y: 25 },
-            { x: 325, y: 75 },
-            { x: 125, y: 25 },
-            { x: 75, y: 0 },
-            { x: 175, y: 25 },
-            { x: 225, y: 0 },
-            { x: 275, y: 25 },
-            { x: 325, y: 0 },
-            { x: 375, y: 25 },
-          ].map((node, index) => (
-            <motion.circle
-              key={`left-${index}`}
-              cx={node.x}
-              cy={node.y}
-              r="3"
-              fill="#343A40"
-              initial={{ scale: 0, opacity: 0.3 }}
-              animate={{ scale: [0, 1.2, 1], opacity: [0.3, 0.6, 0.4] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: index * 0.3,
-                ease: "easeInOut",
-              }}
-            />
-          ))}
-        </g>
 
         {/* RIGHT SIDE */}
         <g mask="url(#rightMask)" opacity="0.5">
@@ -129,7 +24,7 @@ export default function CircuitBackground() {
             fill="none"
             initial={{ pathLength: 0, opacity: 0.2 }}
             animate={{ pathLength: 1, opacity: 0.4 }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
           />
           <motion.path
             d="M800,300 L1000,300 L1000,500 L1200,500 L1200,600 L1400,600 L1400,400 L1600,400 L1600,650 L1800,650"
@@ -139,7 +34,7 @@ export default function CircuitBackground() {
             initial={{ pathLength: 0, opacity: 0.2 }}
             animate={{ pathLength: 1, opacity: 0.4 }}
             transition={{
-              duration: 5,
+              duration: 6,
               repeat: Infinity,
               ease: "linear",
               delay: 0.8,
@@ -153,7 +48,7 @@ export default function CircuitBackground() {
             initial={{ pathLength: 0, opacity: 0.2 }}
             animate={{ pathLength: 1, opacity: 0.4 }}
             transition={{
-              duration: 6,
+              duration: 7,
               repeat: Infinity,
               ease: "linear",
               delay: 1.6,
@@ -167,7 +62,7 @@ export default function CircuitBackground() {
             initial={{ pathLength: 0, opacity: 0.2 }}
             animate={{ pathLength: 1, opacity: 0.4 }}
             transition={{
-              duration: 7,
+              duration: 8,
               repeat: Infinity,
               ease: "linear",
               delay: 2.4,
@@ -198,7 +93,7 @@ export default function CircuitBackground() {
               initial={{ scale: 0, opacity: 0.3 }}
               animate={{ scale: [0, 1.2, 1], opacity: [0.3, 0.6, 0.4] }}
               transition={{
-                duration: 2,
+                duration: 4,
                 repeat: Infinity,
                 delay: index * 0.3,
                 ease: "easeInOut",

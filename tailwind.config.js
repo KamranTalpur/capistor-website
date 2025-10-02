@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./components/ui/**/*.{ts,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -18,6 +22,12 @@ export default {
           700: "#343A40",
           800: "#212529",
         },
+      },
+      width: {
+        50: "12.5rem", // Example custom size
+      },
+      height: {
+        50: "12.5rem", // Example custom size
       },
 
       fontFamily: {
