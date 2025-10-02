@@ -75,25 +75,21 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("home");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "home" ? "font-bold" : ""}`}>
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "home" ? "font-bold" : ""
+                }`}>
                 Home
               </a>
-              <a
-                href="#about"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("about");
-                }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "about" ? "font-bold" : ""}`}>
-                About
-              </a>
+
               <a
                 href="#products"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("products");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "products" ? "font-bold" : ""}`}>
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "products" ? "font-bold" : ""
+                }`}>
                 Products
               </a>
               <a
@@ -102,7 +98,9 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("services");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "services" ? "font-bold" : ""}`}>
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "services" ? "font-bold" : ""
+                }`}>
                 Services
               </a>
               <a
@@ -111,8 +109,21 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("blog");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "blog" ? "font-bold" : ""}`}>
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "blog" ? "font-bold" : ""
+                }`}>
                 Blog
+              </a>
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("about");
+                }}
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "about" ? "font-bold" : ""
+                }`}>
+                About
               </a>
               <a
                 href="#contact"
@@ -120,7 +131,9 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("contact");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "contact" ? "font-bold" : ""}`}>
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "contact" ? "font-bold" : ""
+                }`}>
                 Contact Us
               </a>
             </div>
@@ -159,25 +172,21 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("home");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "home" ? "font-bold" : ""}`}>
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "home" ? "font-bold" : ""
+                }`}>
                 Home
               </a>
-              <a
-                href="#about"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("about");
-                }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "about" ? "font-bold" : ""}`}>
-                About
-              </a>
+
               <a
                 href="#products"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("products");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "products" ? "font-bold" : ""}`}>
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "products" ? "font-bold" : ""
+                }`}>
                 Products
               </a>
               <a
@@ -186,7 +195,9 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("services");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "services" ? "font-bold" : ""}`}>
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "services" ? "font-bold" : ""
+                }`}>
                 Services
               </a>
               <a
@@ -195,8 +206,21 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("blog");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "blog" ? "font-bold" : ""}`}>
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "blog" ? "font-bold" : ""
+                }`}>
                 Blog
+              </a>
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("about");
+                }}
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "about" ? "font-bold" : ""
+                }`}>
+                About
               </a>
               <a
                 href="#contact"
@@ -204,7 +228,9 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("contact");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${activeSection === "contact" ? "font-bold" : ""}`}>
+                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "contact" ? "font-bold" : ""
+                }`}>
                 Contact Us
               </a>
             </motion.div>

@@ -20,7 +20,7 @@ export default function ProductImage({
     return (
       <motion.div
         key={`${productIndex}-${imageIndex}`}
-        className="w-[600px] h-[600px] rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-capistor-100 text-sexyblue font-domine relative"
+        className="w-full max-w-[600px] h-auto max-h-[600px] sm:max-w-[200px] sm:max-h-[200px] md:max-w-[500px] md:max-h-[500px] lg:max-w-[700px] lg:max-h-[700px] rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-capistor-100 text-sexyblue font-domine relative"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -37,7 +37,7 @@ export default function ProductImage({
   return (
     <motion.div
       key={`${productIndex}-${imageIndex}`}
-      className="w-[600px] h-[600px] rounded-2xl overflow-hidden shadow-2xl relative group"
+      className="w-full max-w-[600px] h-auto max-h-[600px] sm:max-w-[200px] sm:max-h-[200px] md:max-w-[500px] md:max-h-[500px] lg:max-w-[700px] lg:max-h-[700px] rounded-2xl overflow-hidden shadow-2xl relative group"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -55,7 +55,7 @@ export default function ProductImage({
       <img
         src={image.url}
         alt={image.alt || `Product ${productIndex + 1} image ${imageIndex + 1}`}
-        className="w-full h-full object-cover transition-transform duration-700"
+        className="w-full h-full object-cover sm:object-contain md:object-cover transition-transform duration-700"
         style={{
           imageRendering: "crisp-edges",
           position: "relative",

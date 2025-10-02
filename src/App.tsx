@@ -7,7 +7,11 @@ import Services from "./components/pages/Services";
 import Blog from "./components/pages/Blog";
 import Contact from "./components/pages/Contact";
 import { useProductNavigation } from "./utils/useProductNavigation";
-import { Product, loadProducts, getFallbackProducts } from "./utils/productLoader";
+import {
+  Product,
+  loadProducts,
+  getFallbackProducts,
+} from "./utils/productLoader";
 
 export default function App() {
   const sections = {
@@ -54,9 +58,7 @@ export default function App() {
       <section ref={sections.home}>
         <Home />
       </section>
-      <section ref={sections.about}>
-        <About />
-      </section>
+
       <section ref={sections.products}>
         <ProductsSection
           products={products}
@@ -73,6 +75,9 @@ export default function App() {
       </section>
       <section ref={sections.blog}>
         <Blog />
+      </section>
+      <section ref={sections.about}>
+        <About />
       </section>
       <section ref={sections.contact}>
         <Contact />
