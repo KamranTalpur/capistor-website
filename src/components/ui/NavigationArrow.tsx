@@ -12,7 +12,7 @@ export default function NavigationArrow({ show, onClick, className = "" }: Navig
   return (
     <motion.button
       onClick={onClick}
-      className={`z-10 fixed bottom-8 left-1/2 -translate-x-1/2 ${className}`}
+      className={`z-10 fixed bottom-8 left-1/2 -translate-x-1/2 ${className} md:bottom-12`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}

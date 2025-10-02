@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
+import MyNavbar from "./components/Navbar";
 import Home from "./components/home";
 import About from "./components/pages/About";
 import ProductsSection from "./components/sections/ProductsSection";
@@ -50,7 +50,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-kindofwhite">
-      <Navbar sections={sections} />
+      <MyNavbar sections={sections} />
       <section ref={sections.home}>
         <Home />
       </section>
