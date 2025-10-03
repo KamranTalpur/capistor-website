@@ -30,13 +30,6 @@ export const getFallbackProducts = (): Product[] => [
         detail:
           "The Physical Pomodoro Timer is a hardware-based productivity tool designed to implement the Pomodoro technique. Built with an Arduino microcontroller, it features a custom PCB, LEDs, a buzzer, and buttons for user interaction. The timer cycles through 25-minute work periods and 5-minute breaks, with visual and auditory cues to signal transitions.",
       },
-      {
-        url: "/product_images/placeholder1.png",
-        alt: "RGB Laser Projector",
-        thought: "Vivid laser displays",
-        detail:
-          "The RGB Laser Projector is an advanced optics system combining red, green, and blue lasers through a dichroic x-cube to create vibrant displays. Controlled by an STM32 microcontroller, it uses galvanomirrors for precise beam steering and raster scanning. Firmware in C handles PWM, UART debugging, and integrates with Python scripts for spectroscopy.",
-      },
     ],
   },
   {

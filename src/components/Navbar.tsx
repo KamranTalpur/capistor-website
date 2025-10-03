@@ -52,8 +52,8 @@ export default function MyNavbar({ sections }: NavbarProps) {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-kindofwhite z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 right-0 w-full bg-kindofwhite z-50">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center items-center h-16 relative">
           <div className="flex items-center space-x-6">
             <motion.div
@@ -62,7 +62,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}>
               <motion.img
-                className="h-8 sm:h-10 md:h-12"
+                className="md:w-8 md:h-8 sm:h-10  "
                 src="/logo_svg1.svg"
                 alt="logo"
                 whileHover={{ scale: 1.1 }}
@@ -75,7 +75,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("home");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "home" ? "font-bold" : ""
                 }`}>
                 Home
@@ -87,7 +87,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("products");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "products" ? "font-bold" : ""
                 }`}>
                 Products
@@ -98,7 +98,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("services");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "services" ? "font-bold" : ""
                 }`}>
                 Services
@@ -109,7 +109,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("blog");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "blog" ? "font-bold" : ""
                 }`}>
                 Blog
@@ -120,7 +120,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("about");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "about" ? "font-bold" : ""
                 }`}>
                 About
@@ -131,7 +131,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("contact");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "contact" ? "font-bold" : ""
                 }`}>
                 Contact Us
@@ -142,7 +142,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
           <div className="sm:hidden ml-4">
             <button
               onClick={toggleMenu}
-              className="text-sexyblue focus:outline-none focus:ring-2 focus:ring-inset focus:ring-capistor-500 p-2"
+              className="text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-capistor-500 p-2"
               aria-label="Toggle menu">
               <svg
                 className="h-6 w-6"
@@ -172,7 +172,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("home");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "home" ? "font-bold" : ""
                 }`}>
                 Home
@@ -184,7 +184,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("products");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "products" ? "font-bold" : ""
                 }`}>
                 Products
@@ -195,7 +195,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("services");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "services" ? "font-bold" : ""
                 }`}>
                 Services
@@ -206,7 +206,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("blog");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "blog" ? "font-bold" : ""
                 }`}>
                 Blog
@@ -217,7 +217,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("about");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "about" ? "font-bold" : ""
                 }`}>
                 About
@@ -228,7 +228,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("contact");
                 }}
-                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "contact" ? "font-bold" : ""
                 }`}>
                 Contact Us
