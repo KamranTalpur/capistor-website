@@ -24,7 +24,7 @@ export default function CircuitBackground() {
             fill="none"
             initial={{ pathLength: 0, opacity: 0.2 }}
             animate={{ pathLength: 1, opacity: 0.4 }}
-            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
           />
           <motion.path
             d="M800,300 L1000,300 L1000,500 L1200,500 L1200,600 L1400,600 L1400,400 L1600,400 L1600,650 L1800,650"
@@ -34,7 +34,7 @@ export default function CircuitBackground() {
             initial={{ pathLength: 0, opacity: 0.2 }}
             animate={{ pathLength: 1, opacity: 0.4 }}
             transition={{
-              duration: 6,
+              duration: 12,
               repeat: Infinity,
               ease: "linear",
               delay: 0.8,
@@ -48,7 +48,7 @@ export default function CircuitBackground() {
             initial={{ pathLength: 0, opacity: 0.2 }}
             animate={{ pathLength: 1, opacity: 0.4 }}
             transition={{
-              duration: 7,
+              duration: 14,
               repeat: Infinity,
               ease: "linear",
               delay: 1.6,
@@ -62,7 +62,7 @@ export default function CircuitBackground() {
             initial={{ pathLength: 0, opacity: 0.2 }}
             animate={{ pathLength: 1, opacity: 0.4 }}
             transition={{
-              duration: 8,
+              duration: 16,
               repeat: Infinity,
               ease: "linear",
               delay: 2.4,
@@ -93,7 +93,7 @@ export default function CircuitBackground() {
               initial={{ scale: 0, opacity: 0.3 }}
               animate={{ scale: [0, 1.2, 1], opacity: [0.3, 0.6, 0.4] }}
               transition={{
-                duration: 4,
+                duration: 6,
                 repeat: Infinity,
                 delay: index * 0.3,
                 ease: "easeInOut",

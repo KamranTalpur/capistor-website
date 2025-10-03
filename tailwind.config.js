@@ -35,6 +35,7 @@ export default {
         helvetica: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
         fransisco: ["San Francisco"],
         lora: ["Lora", "serif"], // Added for accent text
+        futura: ['Futura', 'sans-serif'],
       },
 
       animation: {
