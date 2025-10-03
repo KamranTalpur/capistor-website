@@ -62,7 +62,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}>
               <motion.img
-                className="md:w-8 md:h-8 sm:h-10  "
+                className="md:w-8 md:h-8 sm:h-6 sm:w-6  "
                 src="/logo_svg1.svg"
                 alt="logo"
                 whileHover={{ scale: 1.1 }}
