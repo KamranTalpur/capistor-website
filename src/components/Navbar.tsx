@@ -75,7 +75,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("home");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "home" ? "font-bold" : ""
                 }`}>
                 Home
@@ -87,7 +87,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("products");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "products" ? "font-bold" : ""
                 }`}>
                 Products
@@ -98,7 +98,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("services");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "services" ? "font-bold" : ""
                 }`}>
                 Services
@@ -109,7 +109,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("blog");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "blog" ? "font-bold" : ""
                 }`}>
                 Blog
@@ -120,7 +120,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("about");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "about" ? "font-bold" : ""
                 }`}>
                 About
@@ -131,7 +131,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("contact");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "contact" ? "font-bold" : ""
                 }`}>
                 Contact Us
@@ -172,7 +172,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("home");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "home" ? "font-bold" : ""
                 }`}>
                 Home
@@ -184,7 +184,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("products");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "products" ? "font-bold" : ""
                 }`}>
                 Products
@@ -195,7 +195,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("services");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "services" ? "font-bold" : ""
                 }`}>
                 Services
@@ -206,7 +206,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("blog");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "blog" ? "font-bold" : ""
                 }`}>
                 Blog
@@ -217,7 +217,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("about");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "about" ? "font-bold" : ""
                 }`}>
                 About
@@ -228,7 +228,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("contact");
                 }}
-                className={`text-sexyblue font-helvetica font-semibold hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-sexyblue font-futura font-semibold hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "contact" ? "font-bold" : ""
                 }`}>
                 Contact Us

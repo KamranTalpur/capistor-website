@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const SocialCard = () => {
   return (
     <motion.div
-      className="max-w-lg mx-auto bg-kindofwhite shadow-lg rounded-lg p-6 flex flex-col items-center"
+      className="max-w-md mx-auto bg-kindofwhite shadow-lg rounded-lg p-6 flex flex-col items-center "
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -19,7 +19,7 @@ const SocialCard = () => {
           whileHover={{ scale: 1.1, borderColor: "#6C757D" }} // capistor-500
         />
       </div>
-      <h2 className="text-2xl font-helvetica font-semibold text-darkgray mb-4">Connect</h2>
+      <h2 className="text-2xl font-futura font-semibold text-darkgray mb-4">Connect</h2>
       <div className="flex flex-col items-center space-y-4 mb-4">
         <div className="flex space-x-6">
           <a
@@ -78,7 +78,7 @@ const SocialCard = () => {
           href="/your-cv.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 px-4 py-2 bg-capistor-500 text-white font-helvetica rounded-md hover:bg-capistor-600 transition-colors duration-200">
+          className="mt-4 px-4 py-2 bg-capistor-500 text-white font-futura rounded-md hover:bg-capistor-600 transition-colors duration-200">
           View CV
         </a>
       </div>

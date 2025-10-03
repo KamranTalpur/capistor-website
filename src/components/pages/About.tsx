@@ -8,7 +8,7 @@ export default function About() {
         <div className="flex flex-col md:flex-row h-full justify-center gap-8 lg:gap-32 relative">
           <div className="w-full md:w-5/12 flex flex-col justify-center text-center">
             <motion.h1
-              className="text-2xl sm:text-3xl md:text-4xl font-helvetica font-bold text-sexyblue text-center mb-4 sm:mb-6 md:mb-6 mr-0 sm:mr-4 md:mr-9"
+              className="text-2xl sm:text-3xl md:text-4xl font-futura font-bold text-sexyblue text-center mb-4 sm:mb-6 md:mb-6 mr-0 sm:mr-4 md:mr-9"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}>
