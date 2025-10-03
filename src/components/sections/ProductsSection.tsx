@@ -54,7 +54,7 @@ export default function ProductsSection({
     <section className="products-section min-h-screen relative z-10">
       <div className="relative top-0 h-screen bg-kindofwhite">
         <div className="flex flex-col md:flex-row h-full justify-center">
-          <div className="w-full md:w-5/12 mt-16 sm:p-6 md:p-8 lg:p-12 flex flex-col items-center text-center">
+          <div className="w-full md:w-5/12 md:mt-24 sm:p-6 md:p-8 lg:p-12 flex flex-col items-center text-center">
             <motion.h2
               className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-futura font-bold text-sexyblue mt-10 sm:mt-16 md:mt-20 mb-6 sm:mb-8 md:mb-6"
               initial={{ opacity: 0, y: -50 }}
@@ -80,10 +80,10 @@ export default function ProductsSection({
             </motion.div>
           </div>
           <div className="w-full md:w-5/12 relative overflow-visible flex flex-col items-center justify-end">
-            <div className="flex flex-col md:flex-row h-full w-full relative">
+            <div className="flex flex-col md:flex-row h-full w-full relative md:pt-28">
               <div className="w-full md:w-4/5 flex flex-col items-center relative">
                 <motion.div
-                  className="w-full max-w-[600px] h-auto max-h-[600px] sm:max-w-[200px] sm:max-h-[200px] md:max-w-[400px] md:max-h-[400px] lg:max-w-[700px] lg:max-h-[700px] flex-1 flex items-center justify-center pt-9 sm:pt-6 md:pt-20 relative group"
+                  className="w-full max-w-[600px] h-auto max-h-[500px] sm:max-w-[400px] sm:max-h-[400px] md:max-w-[500px] md:max-h-[500px] lg:max-w-[600px] lg:max-h-[600px] flex-1 flex items-center justify-center pt-9 sm:pt-6 md:pt-20 lg:pt-12 relative group"
                   key={`${currentProduct}-image`}
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -157,7 +157,7 @@ export default function ProductsSection({
                     />
                   ))}
                 </div>
-                <div className="flex gap-2 sm:gap-4 md:gap-4 mb-4 sm:mb-6 md:mb-8">
+                <div className="flex gap-2 sm:gap-4 md:gap-4 md:w-52 mb-4 sm:mb-6 md:mb-8">
                   <button
                     onClick={previousProduct}
                     className="w-32 sm:w-40 md:w-48 py-2 bg-sexyblue text-kindofwhite rounded-lg font-futura text-base sm:text-lg md:text-lg hover:bg-capistor-600 transition-colors duration-200"
@@ -172,7 +172,7 @@ export default function ProductsSection({
                   </button>
                 </div>
                 <button
-                  className="md:hidden absolute top-12 left-16 w-10 h-10 bg-sexyblue/75 text-kindofwhite rounded-full flex items-center justify-center hover:bg-sexyblue transition-colors duration-200 z-40"
+                  className="md:hidden absolute top-10 left-36 w-10 h-10 bg-sexyblue/75 text-kindofwhite rounded-full flex items-center justify-center hover:bg-sexyblue transition-colors duration-200 z-40"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   aria-label="Toggle product menu">
                   <svg
@@ -193,7 +193,7 @@ export default function ProductsSection({
               <AnimatePresence>
                 {isMenuOpen && (
                   <motion.nav
-                    className="absolute top-0 right-0 w-1/2 h-auto max-h-[calc(100vh-595px)] md:hidden bg-kindofwhite/90 p-4 shadow-lg z-50 mt-9 overflow-y-auto"
+                    className="absolute top-0 right-0 w-1/2 h-auto max-h-[calc(100vh-589px)] md:hidden bg-kindofwhite/90 p-4 shadow-lg z-50 mt-6 overflow-y-auto"
                     initial={{ x: "100%" }}
                     animate={{ x: 0 }}
                     exit={{ x: "100%" }}
@@ -253,7 +253,7 @@ export default function ProductsSection({
                   </motion.nav>
                 )}
               </AnimatePresence>
-              <nav className="hidden md:block w-1/2 pl-4 pt-44">
+              <nav className="hidden md:block w-1/2 max-w-1/3 pl-4 md:pt-28 ">
                 <motion.ul
                   className="bg-kindofwhite/90 p-4 rounded-lg shadow-lg space-y-2 max-h-[calc(100vh-535px)] overflow-y-auto"
                   initial={{ opacity: 0, x: 20 }}
