@@ -34,7 +34,7 @@ export default function Service() {
   return (
     <section className="min-h-screen text-sexyblue flex items-center">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl w-full">
-        <div className="relative top-0 h-screen bg-kindofwhite">
+        <div className="relative top-28 md:top-0 h-screen bg-kindofwhite">
           <div className="flex flex-col h-full justify-center">
             <div className="w-full sm:p-6 md:p-8 lg:p-12 flex flex-col items-center text-center">
               <motion.div
