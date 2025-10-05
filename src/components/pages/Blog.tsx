@@ -45,7 +45,7 @@ export default function BlogSection() {
                 animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : -50 }}
                 transition={{ duration: 0.6 }}>
                 <h1>My Blog</h1>
-                <p className="text-sexyblue/40 text-lg sm:text-xl md:text-2xl font-futura max-w-2xl mx-auto ">Follow my journey.</p>
+                <p className="text-sexyblue/40 text-lg sm:text-xl md:text-2xl font-futura max-w-2xl mx-auto ">Follow my journey</p>
               </motion.div>
               <div className="flex flex-col md:flex-row gap-6 sm:gap-2 md:gap-10">
                 {blogPosts.map((post, index) => (

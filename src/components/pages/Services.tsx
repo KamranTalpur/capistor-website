@@ -44,7 +44,7 @@ export default function Service() {
                 transition={{ duration: 0.6 }}>
                 <h1>Services We Provide</h1>
                 <p className="text-sexyblue/40 text-lg sm:text-xl md:text-2xl font-futura max-w-2xl mx-auto ">
-                  We Do all the shit.
+                  We Make All the Stuff
                 </p>
               </motion.div>
               <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-6 sm:gap-8 md:gap-10 md:w-full max-w-4xl">
