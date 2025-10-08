@@ -12,7 +12,7 @@ export default function HeroSection() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-futura text-black font-bold mb-6">
             Electrify Your Vision
           </h1>
-          <p className="text-sexyblue/40 text-lg sm:text-2xl md:text-4xl font-futura max-w-2xl mx-auto">
+          <p className="text-sexyblue/50 text-lg sm:text-2xl md:text-4xl font-futura max-w-2xl mx-auto">
             Your Ideas My Assistance
           </p>
         </motion.div>

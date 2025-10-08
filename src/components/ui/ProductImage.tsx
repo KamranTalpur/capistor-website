@@ -20,7 +20,7 @@ export default function ProductImage({
     return (
       <motion.div
         key={`${productIndex}-${imageIndex}`}
-        className="w-full max-w-[600px] h-auto max-h-[600px] sm:max-w-[200px] sm:max-h-[200px] md:max-w-[500px] md:max-h-[500px] lg:max-w-[700px] lg:max-h-[700px] rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-capistor-100 text-sexyblue font-domine relative"
+        className="w-full max-w-[600px] h-auto max-h-[600px] sm:max-w-[200px] sm:max-h-[200px] md:max-w-[500px] md:max-h-[500px] lg:max-w-[700px] lg:max-h-[700px] rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center bg-capistor-100 text-black font-domine relative"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -50,7 +50,7 @@ export default function ProductImage({
       onHoverEnd={() => setIsHovered(false)}>
       <ThoughtBubble text={image.thought} show={isHovered} />
 
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-sexyblue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-kindofwhite/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
       <img
         src={image.url}
@@ -65,7 +65,7 @@ export default function ProductImage({
         onError={(e) => console.error("Image failed to load:", image.url, e)}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-kindofwhite/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
     </motion.div>
   );
 }
