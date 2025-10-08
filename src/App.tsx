@@ -3,6 +3,7 @@ import MyNavbar from "./components/Navbar";
 import Home from "./components/home";
 import About from "./components/pages/About";
 import ProductsSection from "./components/sections/ProductsSection";
+import ProductsDemoSection from "./components/sections/ProductsDemoSection"; 
 import Services from "./components/pages/Services";
 import Blog from "./components/pages/Blog";
 import Contact from "./components/pages/Contact";
@@ -18,6 +19,7 @@ export default function App() {
     home: useRef<HTMLElement>(null),
     about: useRef<HTMLElement>(null),
     products: useRef<HTMLElement>(null),
+    demoproducts: useRef<HTMLElement>(null), // Added for ProductsDemoSection
     services: useRef<HTMLElement>(null),
     blog: useRef<HTMLElement>(null),
     contact: useRef<HTMLElement>(null),
@@ -58,7 +60,9 @@ export default function App() {
       <section ref={sections.home}>
         <Home />
       </section>
-
+      <section ref={sections.services}>
+        <Services />
+      </section>
       <section ref={sections.products}>
         <ProductsSection
           products={products}
@@ -70,8 +74,8 @@ export default function App() {
           previousProduct={previousProduct}
         />
       </section>
-      <section ref={sections.services}>
-        <Services />
+      <section ref={sections.demoproducts} id="products-demo">
+        <ProductsDemoSection />
       </section>
       <section ref={sections.blog}>
         <Blog />

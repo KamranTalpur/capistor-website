@@ -52,11 +52,11 @@ export default function ProductsSection({
 
   return (
     <section className="products-section min-h-screen relative z-10">
-      <div className="relative top-0 h-screen bg-kindofwhite">
+      <div className="relative top-36 md:top-0 h-screen bg-kindofwhite">
         <div className="flex flex-col md:flex-row h-full justify-center">
           <div className="w-full md:w-5/12 md:mt-24 sm:p-6 md:p-8 lg:p-12 flex flex-col items-center text-center">
             <motion.h2
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-futura font-bold text-sexyblue mt-6 sm:mt-16 md:mt-20 mb-6 sm:mb-8 md:mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-futura font-bold text-black mt-6 sm:mt-16 md:mt-20 mb-6 sm:mb-8 md:mb-6"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}>
@@ -103,7 +103,7 @@ export default function ProductsSection({
                           )
                         }
                         aria-label="Previous image"
-                        className="absolute left-4 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 p-2 sm:p-2 md:p-2 rounded-full bg-sexyblue/75 text-kindofwhite shadow hover:bg-sexyblue transition-colors">
+                        className="absolute left-4 sm:left-6 md:left-8 top-1/2 -translate-y-1/2 p-2 sm:p-2 md:p-2 rounded-full bg-sexyblue/75 text-kindofwhite shadow hover:bg-kindofwhite transition-colors">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           className="w-5 sm:w-6 md:w-6 h-5 sm:h-6 md:h-6"

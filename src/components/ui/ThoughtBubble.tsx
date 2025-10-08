@@ -16,8 +16,8 @@ export default function ThoughtBubble({ text, show }: ThoughtBubbleProps) {
             transition={{ duration: 0.3 }}
             className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-30"
         >
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-xl border border-sexyblue/20 relative">
-                <p className="text-sexyblue font-domine font-bold text-sm whitespace-nowrap">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 shadow-xl border border-kindofwhite/20 relative">
+                <p className="text-kindofwhite font-domine font-bold text-sm whitespace-nowrap">
                     {text}
                 </p>
                 {/* Bubble tail */}

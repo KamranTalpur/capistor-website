@@ -6,6 +6,7 @@ interface NavbarProps {
     home: RefObject<HTMLElement>;
     about: RefObject<HTMLElement>;
     products: RefObject<HTMLElement>;
+    demoproducts: RefObject<HTMLElement>;
     services: RefObject<HTMLElement>;
     blog: RefObject<HTMLElement>;
     contact: RefObject<HTMLElement>;
@@ -80,18 +81,6 @@ export default function MyNavbar({ sections }: NavbarProps) {
                 }`}>
                 Home
               </a>
-
-              <a
-                href="#products"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("products");
-                }}
-                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
-                  activeSection === "products" ? "font-bold" : ""
-                }`}>
-                Products
-              </a>
               <a
                 href="#services"
                 onClick={(e) => {
@@ -103,6 +92,30 @@ export default function MyNavbar({ sections }: NavbarProps) {
                 }`}>
                 Services
               </a>
+              <a
+                href="#products"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("products");
+                }}
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "products" ? "font-bold" : ""
+                }`}>
+                Products
+              </a>
+              <motion.a
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "demoproducts" ? "font-bold" : ""
+                }`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("demoproducts");
+                }}>
+                Demo
+              </motion.a>
               <a
                 href="#blog"
                 onClick={(e) => {
@@ -177,18 +190,6 @@ export default function MyNavbar({ sections }: NavbarProps) {
                 }`}>
                 Home
               </a>
-
-              <a
-                href="#products"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("products");
-                }}
-                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
-                  activeSection === "products" ? "font-bold" : ""
-                }`}>
-                Products
-              </a>
               <a
                 href="#services"
                 onClick={(e) => {
@@ -200,6 +201,30 @@ export default function MyNavbar({ sections }: NavbarProps) {
                 }`}>
                 Services
               </a>
+              <a
+                href="#products"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("products");
+                }}
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "products" ? "font-bold" : ""
+                }`}>
+                Products
+              </a>
+              <motion.a
+                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
+                  activeSection === "demoproducts" ? "font-bold" : ""
+                }`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("demoproducts");
+                }}>
+                Demo
+              </motion.a>
               <a
                 href="#blog"
                 onClick={(e) => {
