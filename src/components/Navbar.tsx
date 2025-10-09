@@ -101,7 +101,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                 className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "products" ? "font-bold" : ""
                 }`}>
-                Products
+                Projects
               </a>
               <motion.a
                 className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
@@ -210,7 +210,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                 className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
                   activeSection === "products" ? "font-bold" : ""
                 }`}>
-                Products
+                Projects
               </a>
               <motion.a
                 className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
