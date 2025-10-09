@@ -2,7 +2,15 @@ import { motion } from "framer-motion";
 import { cvData } from "../../../data/cvData";
 
 export default function CVPage() {
-  const { personalInfo, summary, experience, projects, awards, education, skills } = cvData;
+  const {
+    personalInfo,
+    summary,
+    experience,
+    projects,
+    awards,
+    education,
+    skills,
+  } = cvData;
 
   const SkillBadge = ({ skill, index }: { skill: string; index: number }) => {
     const colors = [
@@ -222,18 +230,30 @@ export default function CVPage() {
                 const value = (personalInfo as any)[key];
                 if (!value) return null;
                 return (
-                  <div key={key} className="flex items-center justify-center gap-2">
+                  <div
+                    key={key}
+                    className="flex items-center justify-center gap-2">
                     <span>{icon}</span>
                     {key === "email" ? (
-                      <a href={`mailto:${value}`} className="hover:text-sexyblue transition-colors">
+                      <a
+                        href={`mailto:${value}`}
+                        className="hover:text-sexyblue transition-colors">
                         {value}
                       </a>
                     ) : key === "website" ? (
-                      <a href={`http://${value}`} target="_blank" rel="noopener noreferrer" className="hover:text-sexyblue transition-colors">
+                      <a
+                        href={`http://${value}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-sexyblue transition-colors">
                         {value}
                       </a>
                     ) : key === "linkedin" || key === "github" ? (
-                      <a href={value} target="_blank" rel="noopener noreferrer" className="hover:text-sexyblue transition-colors">
+                      <a
+                        href={value}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-sexyblue transition-colors">
                         {key.charAt(0).toUpperCase() + key.slice(1)}
                       </a>
                     ) : (
@@ -287,7 +307,10 @@ export default function CVPage() {
 
           <div className="text-center mt-10">
             <button
-              onClick={() => window.history.back()}
+              onClick={() => {
+                const closeEvent = new CustomEvent("closeCVModal");
+                window.dispatchEvent(closeEvent);
+              }}
               className="px-6 py-2 bg-sexyblue text-kindofwhite rounded-lg hover:bg-sexyblue/80 transition-colors duration-200">
               Back
             </button>

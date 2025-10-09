@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CVPage from "../cv/page"; // adjust path if needed
 
 const SocialCard = () => {
   const [isCVOpen, setIsCVOpen] = useState(false);
+
+  // ✅ Listen for close event from CVPage
+  useEffect(() => {
+    const handleClose = () => setIsCVOpen(false);
+    window.addEventListener("closeCVModal", handleClose);
+    return () => window.removeEventListener("closeCVModal", handleClose);
+  }, []);
 
   const socialLinks = [
     {
@@ -116,16 +123,15 @@ const SocialCard = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setIsCVOpen(false)}>
-          {/* Modal Content */}
           <motion.div
             className="relative bg-kindofwhite/95 rounded-2xl shadow-2xl w-full max-w-4xl h-[90vh] sm:h-auto overflow-y-auto p-4 sm:p-6 backdrop-blur-xl"
             onClick={(e) => e.stopPropagation()}
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: "spring", stiffness: 120, damping: 15 }}>
+            transition={{ type: 'spring', stiffness: 120, damping: 15 }}>
             {/* Close Button */}
             <button
-              className="absolute top-3 right-4 text-black text-2xl font-bold hover:text-sexyblue transition-colors duration-200"
+              className="absolute top-0 right-1 text-black text-3xl font-bold hover:text-sexyblue transition-colors duration-200"
               onClick={() => setIsCVOpen(false)}>
               ×
             </button>
