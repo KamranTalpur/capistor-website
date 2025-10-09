@@ -10,6 +10,7 @@ import Contact from "./components/pages/Contact";
 import { useProductNavigation } from "./utils/useProductNavigation";
 import {
   Product,
+  Category,
   loadProducts,
   getFallbackProducts,
 } from "./utils/productLoader";
@@ -19,22 +20,22 @@ export default function App() {
     home: useRef<HTMLElement>(null),
     about: useRef<HTMLElement>(null),
     products: useRef<HTMLElement>(null),
-    demoproducts: useRef<HTMLElement>(null), // Added for ProductsDemoSection
+    demoproducts: useRef<HTMLElement>(null),
     services: useRef<HTMLElement>(null),
     blog: useRef<HTMLElement>(null),
     contact: useRef<HTMLElement>(null),
   };
 
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<Category[]>([]);
 
   useEffect(() => {
     const initProducts = async () => {
       try {
         const loadedProducts = await loadProducts();
-        setProducts(loadedProducts);
+        setProducts(loadedProducts.flatMap((category) => category.products));
       } catch (error) {
         console.warn("Failed to load products, using fallback:", error);
-        const fallbackProducts = getFallbackProducts();
+        const fallbackProducts = getFallbackProducts().flatMap((category) => category.products);
         setProducts(fallbackProducts);
       }
     };
@@ -55,7 +56,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-kindofwhite">
+    <div className="min-h-screen bg-kindofwhite font-domine">
       <MyNavbar sections={sections} />
       <section ref={sections.home}>
         <Home />
@@ -65,7 +66,7 @@ export default function App() {
       </section>
       <section ref={sections.products}>
         <ProductsSection
-          products={products}
+          products={getFallbackProducts()} // Pass categories directly
           currentProduct={currentProduct}
           currentImageIndex={currentImageIndex}
           setCurrentProduct={setCurrentProduct}

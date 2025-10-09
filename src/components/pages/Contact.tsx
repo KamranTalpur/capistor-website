@@ -45,7 +45,7 @@ const ContactUs = () => {
     <section className="min-h-screen mt-16 md:mt-0 flex items-center justify-center bg-kindofwhite">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
         <motion.div
-          className="bg-white rounded-xl border-2 border-capistor-300/20 shadow-lg p-6 sm:p-8 lg:p-10"
+          className="bg-kindofwhite rounded-xl border-2 border-capistor-300/20 shadow-lg p-6 sm:p-8 lg:p-10"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}>
@@ -56,6 +56,7 @@ const ContactUs = () => {
             transition={{ delay: 0.2, duration: 0.6 }}>
             Contact Us
           </motion.h2>
+          <h4 className="font-futura font-bold text-sexyblue text-center mb-6 sm:mb-8">Email: info@capistor.com</h4>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label
@@ -70,7 +71,7 @@ const ContactUs = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-capistor-300/20 rounded-lg text-sexyblue bg-white"
+                className="w-full p-3 border border-capistor-300/20 rounded-lg text-sexyblue bg-kindofwhite"
               />
             </div>
             <div>
@@ -86,7 +87,7 @@ const ContactUs = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full p-3 border border-capistor-300/20 rounded-lg text-sexyblue bg-white"
+                className="w-full p-3 border border-capistor-300/20 rounded-lg text-sexyblue bg-kindofwhite"
               />
             </div>
             <div>
@@ -102,7 +103,7 @@ const ContactUs = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full p-3 border border-capistor-300/20 rounded-lg text-sexyblue bg-white resize-none"
+                className="w-full p-3 border border-capistor-300/20 rounded-lg text-sexyblue bg-kindofwhite resize-none"
               />
             </div>
             <motion.button

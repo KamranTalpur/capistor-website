@@ -36,50 +36,55 @@ export default function Service() {
   ];
 
   return (
-    <section className="min-h-screen flex items-center bg-kindofwhite">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl w-full">
+    <section className="min-h-screen flex items-center bg-kindofwhite py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full">
         <div className="flex flex-col items-center text-center">
           {/* Heading */}
           <motion.div
-            className="text-3xl sm:text-4xl lg:text-5xl font-futura font-bold mb-8"
+            className="text-3xl sm:text-4xl lg:text-5xl font-futura font-bold mb-10"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : -50 }}
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-black">Services We Provide</h1>
-            <p className="text-sexyblue/50 text-lg sm:text-xl md:text-2xl font-futura max-w-2xl mx-auto">
+            <p className="text-sexyblue/50 text-lg sm:text-xl md:text-2xl font-futura max-w-2xl mx-auto mt-2">
               Innovative Solutions for Your Needs
             </p>
           </motion.div>
 
           {/* Service Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-96 md:w-full">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col justify-between bg-white p-2 rounded-2xl border-2 border-capistor-300/20 shadow-md hover:shadow-lg transition-all duration-300 max-w-md mx-auto"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                whileHover={{ scale: 1.03 }}
+                className="flex flex-col justify-between p-4 md:p-5 rounded-2xl border border-capistor-300/30 shadow-md bg-kindofwhite transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2 }}
+                whileHover={{
+                  scale: 1.06,
+                  borderColor: "rgba(0, 0, 0, 0.25)",
+                  boxShadow: "0 15px 25px rgba(0, 0, 0, 0.25)",
+                }}
               >
-                <div>
-                  <h3 className="text-2xl text-left font-futura font-bold text-black mb-2">
+                {/* Title & Description */}
+                <div className="flex flex-col flex-grow text-left">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-futura font-bold text-black mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-left text-lg text-sexyblue/90 font-fransisco leading-7">
+                  <p className="text-sexyblue/90 text-sm sm:text-base md:text-lg w-full font-fransisco leading-relaxed">
                     {service.description}
                   </p>
                 </div>
 
-                {/* Image at the bottom */}
-                <div className="mt-2">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-48 object-cover rounded-xl"
-                  />
-                </div>
+                {/* Image */}
+                <motion.img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-40 sm:h-48 object-cover rounded-xl mt-4"
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ duration: 0.3 }}
+                />
               </motion.div>
             ))}
           </div>
@@ -88,3 +93,4 @@ export default function Service() {
     </section>
   );
 }
+ 
