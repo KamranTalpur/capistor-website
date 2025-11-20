@@ -19,16 +19,15 @@ export default function MyNavbar({ sections }: NavbarProps) {
   const scrollToSection = (section: keyof typeof sections) => {
     sections[section].current?.scrollIntoView({ behavior: "smooth" });
     setActiveSection(section);
-    console.log(`Clicked ${section}:`, { section });
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 100; // Offset for navbar height
-      const sectionKeys = Object.keys(sections) as (keyof typeof sections)[];
+      const scrollPosition = window.scrollY + 100;
+      const keys = Object.keys(sections) as (keyof typeof sections)[];
       let current = "home";
 
-      for (const key of sectionKeys) {
+      for (const key of keys) {
         const section = sections[key].current;
         if (
           section &&
@@ -47,10 +46,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
   }, [sections]);
 
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <nav className="fixed top-0 right-0 w-full bg-kindofwhite z-50">
@@ -70,6 +66,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
                 whileHover={{ scale: 1.1 }}
               />
             </motion.div>
+
             <div className="hidden sm:flex space-x-6">
               <a
                 href="#home"
@@ -83,6 +80,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
               >
                 Home
               </a>
+
               <a
                 href="#services"
                 onClick={(e) => {
@@ -95,6 +93,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
               >
                 Services
               </a>
+
               <a
                 href="#products"
                 onClick={(e) => {
@@ -120,6 +119,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
               >
                 Blog
               </a>
+
               <a
                 href="#about"
                 onClick={(e) => {
@@ -132,6 +132,7 @@ export default function MyNavbar({ sections }: NavbarProps) {
               >
                 About
               </a>
+
               <a
                 href="#contact"
                 onClick={(e) => {
@@ -177,37 +178,41 @@ export default function MyNavbar({ sections }: NavbarProps) {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
+              {/* Mobile Links */}
+
               <a
                 href="#home"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("home");
                 }}
-                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 ${
                   activeSection === "home" ? "font-bold" : ""
                 }`}
               >
                 Home
               </a>
+
               <a
                 href="#services"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("services");
                 }}
-                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 ${
                   activeSection === "services" ? "font-bold" : ""
                 }`}
               >
                 Services
               </a>
+
               <a
                 href="#products"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("products");
                 }}
-                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 ${
                   activeSection === "products" ? "font-bold" : ""
                 }`}
               >
@@ -220,31 +225,33 @@ export default function MyNavbar({ sections }: NavbarProps) {
                   e.preventDefault();
                   scrollToSection("blog");
                 }}
-                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 ${
                   activeSection === "blog" ? "font-bold" : ""
                 }`}
               >
                 Blog
               </a>
+
               <a
                 href="#about"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("about");
                 }}
-                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 ${
                   activeSection === "about" ? "font-bold" : ""
                 }`}
               >
                 About
               </a>
+
               <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection("contact");
                 }}
-                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
+                className={`text-black font-futura hover:text-capistor-500 ${
                   activeSection === "contact" ? "font-bold" : ""
                 }`}
               >

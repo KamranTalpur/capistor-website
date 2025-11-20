@@ -3,6 +3,7 @@ import MyNavbar from "./components/Navbar";
 import Home from "./components/home";
 import About from "./components/pages/About";
 import ProductsSection from "./components/sections/ProductsSection";
+
 import Services from "./components/pages/Services";
 import Blog from "./components/pages/Blog";
 import Contact from "./components/pages/Contact";
@@ -34,6 +35,7 @@ export default function App() {
       } catch (error) {
         console.warn("Failed to load products, using fallback:", error);
         const fallbackProducts = getFallbackProducts(); // also Product[]
+
         setProducts(fallbackProducts);
       }
     };
@@ -73,7 +75,6 @@ export default function App() {
           previousProduct={previousProduct}
         />
       </section>
-
       <section ref={sections.blog}>
         <Blog />
       </section>
