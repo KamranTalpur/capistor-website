@@ -132,19 +132,6 @@ export default function MyNavbar({ sections }: NavbarProps) {
               >
                 About
               </a>
-
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className={`text-black font-futura hover:text-capistor-500 transition-colors duration-200 ${
-                  activeSection === "contact" ? "font-bold" : ""
-                }`}
-              >
-                Contact Us
-              </a>
             </div>
           </div>
 
@@ -243,19 +230,6 @@ export default function MyNavbar({ sections }: NavbarProps) {
                 }`}
               >
                 About
-              </a>
-
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection("contact");
-                }}
-                className={`text-black font-futura hover:text-capistor-500 ${
-                  activeSection === "contact" ? "font-bold" : ""
-                }`}
-              >
-                Contact Us
               </a>
             </motion.div>
           )}

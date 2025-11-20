@@ -6,7 +6,6 @@ import ProductsSection from "./components/sections/ProductsSection";
 
 import Services from "./components/pages/Services";
 import Blog from "./components/pages/Blog";
-import Contact from "./components/pages/Contact";
 import { useProductNavigation } from "./utils/useProductNavigation";
 import {
   Product,
@@ -80,9 +79,6 @@ export default function App() {
       </section>
       <section ref={sections.about}>
         <About />
-      </section>
-      <section ref={sections.contact}>
-        <Contact />
       </section>
     </div>
   );
